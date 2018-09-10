@@ -1,10 +1,10 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html class="no-js" lang="">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>NASA server access password</title>
+  <title></title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
   <meta name="description" content="">
@@ -25,17 +25,18 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
-  <form action="secret.php" method="post">
+  <?php
 
-  <p>
+  if (!empty($_POST['pass']) AND $_POST['pass'] == "kangourou") {
+    echo 'Voici les codes d\'accès au serveur central de la NASA: </br> xxxxxxxxxx </br> yyyyyyyyyy </br> zzzzzzzzzzz';
+  }else {
 
-    <label for="pass">Votre mot de passe :</label>
-    <input type="password" name="pass" id="pass"/>
-    <input type="submit" value="Envoyer" />
-  </p>
+    echo 'Mot de passe incorrect';
+    header('Location: index.php');
+  }
 
+  ?>
 
-  </form>
 
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
